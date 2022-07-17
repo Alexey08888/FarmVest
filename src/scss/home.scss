@@ -1,0 +1,91 @@
+//====================================================================================================
+.wrapper {
+}
+.page {
+}
+.one {
+	@include adaptiveValue("padding-top", 251, 100);
+
+		// .one__contain-big
+
+		&__contain-big {
+		}
+
+		// .one__container
+
+		&__container {
+		}
+
+		// .one__inner
+
+		&__inner {
+			max-width: 800px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		// .one__title
+
+		&__title {
+			@include adaptiveValue("font-size",70 , 40);
+			//font-size: rem(70);
+			
+			padding-bottom: 69px;
+			& span {
+				color: $greenColor;
+			}
+
+		}
+
+		// .one__text
+
+		&__text {
+			font-weight: 400;
+			padding-bottom: 48px;
+         line-height: 180%;
+		}
+
+		// .one__logo-inner
+
+		&__logo-inner {
+		}
+
+		// .one__logo-img
+
+		&__logo-img {
+		}
+}
+.form{
+	display: flex;
+	justify-content: center;
+
+	
+
+	&__body{
+		@include adaptiveValue("width", 533, 303);
+		//width: rem(533);
+		@include adaptiveValue("height", 76, 50);
+	
+		background-color: white;
+		//position: relative;
+		border-radius: rem(10);
+		padding: rem(6);
+		display: flex;
+		column-gap: rem(7);
+	}
+
+	&__input{
+		padding: 0 rem(15);
+		//border: 1px solid transparent;
+		flex: 1 1 auto;
+		@media (max-width:$mobile){
+			padding: 0;
+         font-size: 15px;
+		}
+	}
+	&__button{
+		@include adaptiveValue("font-size", 18, 13);
+	}
+}
+
+//====================================================================================================

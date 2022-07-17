@@ -1,0 +1,182 @@
+//====================================================================================================
+.header {
+   @include adaptiveValue("padding-top",60 ,20);
+	@include adaptiveValue("padding-bottom",60 ,20);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	// .header__contain-big
+
+	&__contain-big {
+		display: flex;
+		align-items: center;
+		column-gap: rem(10);
+		justify-content: space-between;
+		
+	}
+
+   &__logo {
+	@media (max-width: $mobile) {
+     flex: 1 1 auto;
+
+	  & img {
+		@include adaptiveValue ("width", 143, 100);
+   
+	}
+	}
+
+	
+}
+	
+
+	// .header__menu
+
+	&__menu {
+		//flex: 1 1 auto
+	}
+
+	// .header__actions
+
+	&__actions {
+		display: flex;
+		gap: rem(16);
+		align-items: center;
+		flex: 0 1 300;
+	}
+
+	// .header__button
+
+	&__button {
+	}
+	.icon-menu {
+		display: none;
+		@media (max-width: $mobile) {
+			display: block;
+			position: relative;
+			flex: 0 0 rem(30);
+			height: rem(18);
+			cursor: pointer;
+			z-index: 5;
+			span,
+			&::before,
+			&::after {
+				content: "";
+				transition: all 0.3s ease 0s;
+				right: 0;
+				position: absolute;
+				width: 100%;
+				height: rem(2);
+				background-color: rgb(255, 255, 255);
+			}
+			&::before {
+				top: 0;
+			}
+			&::after {
+				bottom: 0;
+			}
+			span {
+				top: calc(50% - rem(1));
+			}
+			.menu-open & {
+				span {
+					width: 0;
+				}
+				&::before {
+					top: calc(50% - rem(1));
+					transform: rotate(-45deg);
+				}
+				&::after {
+					bottom: calc(50% - rem(1));
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	
+
+
+
+}
+.menu {
+   //padding: 0 rem(10);
+  	// .menu__icon
+
+	&__icon {
+	}
+
+	// .menu__body
+
+	&__body {
+		@media (max-width:$mobile){
+			position: fixed;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			top: 0;
+			left: -100%;
+			background-color: #4e4c4c;
+			transition: left 0.3s ease 0s;
+			padding: 40px 15px 30px 15px;
+			font-size: 34px;
+			color: #828282;
+			justify-content: center;
+		   
+		 
+		 .menu-open & {
+			 left:0;
+		
+		 }
+		}
+	}
+
+	// .menu__list
+
+	&__list {
+		//gap: 44px;
+		display: flex;
+		flex-wrap: wrap ;
+	
+		justify-content: center;
+		align-items: center;
+		@include adaptiveValue("gap", 44, 10);
+		
+		@media (max-width:$mobile){
+			flex-direction: column;
+			font-size: 50px;
+			color: white;  
+			gap: 50px;
+		}
+		
+	}
+
+	// .menu__item
+
+	&__item {
+	}
+
+	// .menu__link
+
+	&__link {
+
+
+		transition: all 0.2s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				
+				color: $greenColor;
+			}
+	}
+}
+
+
+
+
+
+}
+//====================================================================================================
+
+//Burger
+
+

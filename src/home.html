@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"FarmVest"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+         <section class="one">
+				<div class="one__contain-big">
+					<div class="one__container">
+						<div class="one__inner">
+							<h1 class="one__title title">The easiest and fastest way to <span>Invest</span>	 in Agriculture</h1>
+							<p class="one__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu, mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem 
+								ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur </p>
+						   <form class="form" action="files/sendmail/sendmail.php" method="POST">
+								<div class="form__body">
+								<input type="text" data-error="Error" placeholder="Enter your email" class="form__input">
+								<button type="submit" class="form__button button">Get Started</button>
+							</div>
+							</form>
+						</div>
+						<div class="one__logo-inner">
+								<div class="one__logo-img">
+									<img src="@img/market.svg" alt="">
+								</div>
+								<div class="one__logo-img">
+									<img src="@img/forbes.svg" alt="">
+								</div>
+								<div class="one__logo-img">
+									<img src="@img/business.svg" alt="">
+								</div>
+								<div class="one__logo-img">
+									<img src="@img/fidelity.svg" alt="">
+								</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
