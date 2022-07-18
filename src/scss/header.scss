@@ -6,17 +6,27 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 9999999;
+	transition: all 0.3s ease 0s;
+	&._header-scroll{
+    padding-top: rem(20);
+	 padding-bottom: rem(20);
+	 background-color: #12181bf5;
+
+	}
 	// .header__contain-big
 
 	&__contain-big {
-		display: flex;
+		display: grid;
+	   grid-template-columns: rem(300) 1fr rem(300);
 		align-items: center;
-		column-gap: rem(10);
-		justify-content: space-between;
-		
+		@media (max-width:em(1080) ){
+			grid-template-columns: auto 1fr auto;
+		}
 	}
 
    &__logo {
+		position: relative;
 	@media (max-width: $mobile) {
      flex: 1 1 auto;
 
@@ -33,66 +43,25 @@
 	// .header__menu
 
 	&__menu {
-		//flex: 1 1 auto
+	flex: 1 1 auto
 	}
 
 	// .header__actions
 
 	&__actions {
+		position: relative;
+		z-index: 5;
 		display: flex;
 		gap: rem(16);
 		align-items: center;
-		flex: 0 1 300;
+		
 	}
 
 	// .header__button
 
 	&__button {
 	}
-	.icon-menu {
-		display: none;
-		@media (max-width: $mobile) {
-			display: block;
-			position: relative;
-			flex: 0 0 rem(30);
-			height: rem(18);
-			cursor: pointer;
-			z-index: 5;
-			span,
-			&::before,
-			&::after {
-				content: "";
-				transition: all 0.3s ease 0s;
-				right: 0;
-				position: absolute;
-				width: 100%;
-				height: rem(2);
-				background-color: rgb(255, 255, 255);
-			}
-			&::before {
-				top: 0;
-			}
-			&::after {
-				bottom: 0;
-			}
-			span {
-				top: calc(50% - rem(1));
-			}
-			.menu-open & {
-				span {
-					width: 0;
-				}
-				&::before {
-					top: calc(50% - rem(1));
-					transform: rotate(-45deg);
-				}
-				&::after {
-					bottom: calc(50% - rem(1));
-					transform: rotate(45deg);
-				}
-			}
-		}
-	}
+	
 	
 
 
@@ -146,7 +115,7 @@
 			flex-direction: column;
 			font-size: 50px;
 			color: white;  
-			gap: 50px;
+			gap: 40px;
 		}
 		
 	}
@@ -179,4 +148,47 @@
 
 //Burger
 
-
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: rgb(255, 255, 255);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
